@@ -17,7 +17,17 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "mopa/bootstrap-bundle": "dev-master",
+        "mopa/bootstrap-sandbox-bundle": "dev-master",
+        "twbs/bootstrap": "dev-master",
+        "liip/theme-bundle": "dev-master",
+        "knplabs/knp-menu-bundle": "dev-master",
+        "knplabs/knp-menu": "dev-master",      
+        "knplabs/knp-paginator-bundle": "dev-master",
+        "craue/formflow-bundle": "dev-master",
+        "oyejorge/less.php": "dev-master"
+        
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

@@ -1,0 +1,8 @@
+werkstatt_foot:
+    resource: "@WerkstattFootBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+MopaBootstrapSandbox:
+    resource: "@MopaBootstrapSandboxBundle/Resources/config/routing.yml"
