@@ -9,7 +9,6 @@
         {% block stylesheets %}
         {% stylesheets
             '%kernel.root_dir%/../vendor/twbs/bootstrap/less/bootstrap.less'
-            '%kernel.root_dir%/../vendor/twbs/bootstrap/less/responsive.less'
             filter='lessphp,cssrewrite'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" />
