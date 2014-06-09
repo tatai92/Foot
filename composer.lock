@@ -1,10 +1,9 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
-        "This file is @generated automatically"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c89ea7c0cfdafe04046a54d1d3744a43",
+    "hash": "71aa54cbcf120c1e1c74dda67845b871",
     "packages": [
         {
             "name": "craue/formflow-bundle",
@@ -2013,12 +2012,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "3b99a41246cb25b1fba79d14007ed0238409e63f"
+                "reference": "57c8982b1c5c7ab11700b611c2f3d437c5bc58e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/3b99a41246cb25b1fba79d14007ed0238409e63f",
-                "reference": "3b99a41246cb25b1fba79d14007ed0238409e63f",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/57c8982b1c5c7ab11700b611c2f3d437c5bc58e5",
+                "reference": "57c8982b1c5c7ab11700b611c2f3d437c5bc58e5",
                 "shasum": ""
             },
             "replace": {
@@ -2056,7 +2055,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2014-06-07 06:13:05"
+            "time": "2014-06-08 01:27:32"
         },
         {
             "name": "twig/extensions",

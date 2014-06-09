@@ -1,90 +1,98 @@
-{% extends 'MopaBootstrapBundle::base' ~ theme_type|default('')~ '.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Super FOOT{% endblock %}</title>
+ 
+        {# ... #}
+ 
+        {% block stylesheets %}
+        {% stylesheets
+            '%kernel.root_dir%/../vendor/twbs/bootstrap/less/bootstrap.less'
+            '%kernel.root_dir%/../vendor/twbs/bootstrap/less/responsive.less'
+            filter='lessphp,cssrewrite'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}  
+        {% endblock %}
+ 
+        {# ... #}
+ 
+    </head>
+    <body> 
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+          </div>
 
-{% block head_style %}
-{% stylesheets
-       '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
-       '@MopaBootstrapSandboxBundle/Resources/public/css/prettify.css'
-       '@MopaBootstrapBundle/Resources/public/bootstrap/docs/assets/css/docs.min.css'
-       '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
-%}
-<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
-{% endstylesheets %}
-{% endblock head_style %}
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
 
-{% block body_tag %}
-<body data-spy="scroll" data-target="#navbar-example">
-{% endblock body_tag %}
+        {% block body %}
+        
+        
+        {% endblock %}
 
-{% block head_script %}
-{% javascripts
-    'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
-%}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
-{% endblock head_script %}
-
-
-{% block head_bottom %}
-    {{ parent() }}
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-17161773-2']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-{% endblock head_bottom %}
-
-{% block navbar %}
-{% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, inverse: true, id: 'navbar-example' } %}
-    {% block brand %}
-        <a class="navbar-brand" href="{{ path('_welcome') }}">Mopa Bootstrap</a>
-    {% endblock %}
-
-    {% block menu %}
-        {{ mopa_bootstrap_menu('MopaBootstrapSandboxBundle:Builder:createMainMenu') }}
-        {{ mopa_bootstrap_menu('exampledropdown', {'automenu': 'navbar', 'pull-right': true}) }}
-    {% endblock %}
-{% endembed %}
-{% endblock navbar %}
-
-{% block body %}
-{{ parent() }}
-{% block fork_me %}
-<a href="http://github.com/phiamo/MopaBootstrapBundle"><img style="position: absolute; top: 40px; right: 0; border: 0; z-index: 1025;" src="{{ asset('bundles/mopabootstrapsandbox/img/github_forkme_ribbon.png') }}" alt="Fork me on GitHub"></a>
-{% endblock fork_me %}
-{% endblock body%}
-
-{% block content_row %}
-{{ parent() }}
-{% if showTemplate is defined or showForm is defined %}
-<div class="row">
-    {% if showForm is defined %}
-    <div class="col-lg-6">
-        <p><strong>FormType Code</strong></p>
-        <pre class="prettyprint">{{ classSource(showForm) }}</pre>
-    </div>
-    {% endif %}
-    {% if showTemplate is defined %}
-    <div class="col-lg-6">
-        <p><strong>Template Code</strong></p>
-        <pre class="prettyprint">{{ twigSource(showTemplate) }}</pre>
-    </div>
-    {% endif %}
-</div>
-{% endif %}
-{% endblock content_row %}
-
-{% block foot_script %}
-{{ parent() }}
-
-<script type="text/javascript" src="{{ asset('bundles/mopabootstrapsandbox/js/prettify.js') }}"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    window.prettyPrint && prettyPrint();
-});
-</script>
-{% endblock foot_script %}
+ 
+        {% block javascripts %}
+        {% javascripts
+            'http://code.jquery.com/jquery-1.11.1.js'
+            '../vendor/twbs/bootstrap/js/dropdown.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% endblock %}
+ 
+        <script type="text/javascript">
+            $(document).ready(function() {
+                {% block document_ready %}{% endblock %}
+            });
+        </script>
+    </body>
+</html>
