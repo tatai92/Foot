@@ -1,0 +1,77 @@
+<?php
+
+namespace Werkstatt\Bundle\FootBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Matchs
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Werkstatt\Bundle\FootBundle\Entity\MatchsRepository")
+ */
+class Matchs
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Matchs
+     *
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \datetime $date
+     * @return Matchs
+     */
+    public function setDate(\datetime $date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+}

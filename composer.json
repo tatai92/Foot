@@ -18,6 +18,7 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
+         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "mopa/bootstrap-bundle": "dev-master",
         "mopa/bootstrap-sandbox-bundle": "dev-master",
         "twbs/bootstrap": "dev-master",
