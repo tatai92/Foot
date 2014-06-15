@@ -5,12 +5,12 @@ namespace Werkstatt\Bundle\FootBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Goal
+ * GameAction
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Werkstatt\Bundle\FootBundle\Entity\GameActionRepository")
  */
-class Goal
+class GameAction
 {
     /**
      * @var integer
@@ -30,13 +30,6 @@ class Goal
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Matche")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $matche;
-    
-    
-    /**
      * Get id
      *
      * @return integer 
@@ -50,7 +43,7 @@ class Goal
      * Set minute
      *
      * @param integer $minute
-     * @return Goal
+     * @return GameAction
      */
     public function setMinute($minute)
     {
@@ -67,30 +60,5 @@ class Goal
     public function getMinute()
     {
         return $this->minute;
-    }
-
-
-
-    /**
-     * Set matche
-     *
-     * @param \Werkstatt\Bundle\FootBundle\Entity\Matche $matche
-     * @return Goal
-     */
-    public function setMatche(\Werkstatt\Bundle\FootBundle\Entity\Matche $matche)
-    {
-        $this->matche = $matche;
-
-        return $this;
-    }
-
-    /**
-     * Get matche
-     *
-     * @return \Werkstatt\Bundle\FootBundle\Entity\Matche 
-     */
-    public function getMatche()
-    {
-        return $this->matche;
     }
 }

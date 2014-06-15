@@ -5,12 +5,12 @@ namespace Werkstatt\Bundle\FootBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Matche
+ * GameTeam
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Werkstatt\Bundle\FootBundle\Entity\MatcheRepository")
+ * @ORM\Entity
  */
-class Matche
+class GameTeam
 {
     /**
      * @var integer
@@ -22,11 +22,11 @@ class Matche
     private $id;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="nb_goals", type="smallint")
      */
-    private $date;
+    private $nbGoals;
 
 
     /**
@@ -40,25 +40,25 @@ class Matche
     }
 
     /**
-     * Set date
+     * Set nbGoals
      *
-     * @param \DateTime $date
-     * @return Matche
+     * @param integer $nbGoals
+     * @return GameTeam
      */
-    public function setDate($date)
+    public function setNbGoals($nbGoals)
     {
-        $this->date = $date;
+        $this->nbGoals = $nbGoals;
 
         return $this;
     }
 
     /**
-     * Get date
+     * Get nbGoals
      *
-     * @return \DateTime 
+     * @return integer 
      */
-    public function getDate()
+    public function getNbGoals()
     {
-        return $this->date;
+        return $this->nbGoals;
     }
 }
