@@ -972,12 +972,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenu.git",
-                "reference": "a39d2af6ba5ecab0f4f96e1c74fd2598ef051103"
+                "reference": "9768b3a9d7b22ed6c54953ae0af45e94475ae00d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/a39d2af6ba5ecab0f4f96e1c74fd2598ef051103",
-                "reference": "a39d2af6ba5ecab0f4f96e1c74fd2598ef051103",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/9768b3a9d7b22ed6c54953ae0af45e94475ae00d",
+                "reference": "9768b3a9d7b22ed6c54953ae0af45e94475ae00d",
                 "shasum": ""
             },
             "require": {
@@ -1028,7 +1028,7 @@
                 "menu",
                 "tree"
             ],
-            "time": "2014-06-12 16:50:12"
+            "time": "2014-06-13 08:09:55"
         },
         {
             "name": "knplabs/knp-menu-bundle",
@@ -1037,16 +1037,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "e77137fd7bfdfe85536e1fc28931d822373f3e24"
+                "reference": "e6a0756b80349f04023faaef4ae4d801cbd716df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/e77137fd7bfdfe85536e1fc28931d822373f3e24",
-                "reference": "e77137fd7bfdfe85536e1fc28931d822373f3e24",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/e6a0756b80349f04023faaef4ae4d801cbd716df",
+                "reference": "e6a0756b80349f04023faaef4ae4d801cbd716df",
                 "shasum": ""
             },
             "require": {
-                "knplabs/knp-menu": "~2.0, >=2.0.0-alpha3",
+                "knplabs/knp-menu": "~2.0, >=2.0.0-beta1",
                 "symfony/framework-bundle": "~2.0"
             },
             "type": "symfony-bundle",
@@ -1082,7 +1082,7 @@
             "keywords": [
                 "menu"
             ],
-            "time": "2014-06-12 16:05:11"
+            "time": "2014-06-16 19:59:46"
         },
         {
             "name": "knplabs/knp-paginator-bundle",
@@ -1726,16 +1726,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "043e336b871f17a117f76ef8e190eddfc04c8d48"
+                "reference": "2b9af56cc676c338d52fca4c657e5bdff73bb7af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/043e336b871f17a117f76ef8e190eddfc04c8d48",
-                "reference": "043e336b871f17a117f76ef8e190eddfc04c8d48",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/2b9af56cc676c338d52fca4c657e5bdff73bb7af",
+                "reference": "2b9af56cc676c338d52fca4c657e5bdff73bb7af",
                 "shasum": ""
             },
             "require": {
@@ -1776,7 +1776,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-05-08 08:11:19"
+            "time": "2014-06-13 11:44:54"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -2129,12 +2129,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "4aca4cf8661ab6e17ffd58820679a081db80ceaa"
+                "reference": "045aceef943330a84042a6f3a5c81dc79a10e7e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/4aca4cf8661ab6e17ffd58820679a081db80ceaa",
-                "reference": "4aca4cf8661ab6e17ffd58820679a081db80ceaa",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/045aceef943330a84042a6f3a5c81dc79a10e7e5",
+                "reference": "045aceef943330a84042a6f3a5c81dc79a10e7e5",
                 "shasum": ""
             },
             "replace": {
@@ -2172,7 +2172,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2014-06-10 07:26:20"
+            "time": "2014-06-15 17:33:15"
         },
         {
             "name": "twig/extensions",

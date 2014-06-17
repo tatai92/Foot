@@ -1,0 +1,89 @@
+<?php
+
+namespace Werkstatt\Bundle\FootBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TeamPlayer
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class TeamPlayer
+{
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="start_date", type="date")
+     */
+    private $startDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="date")
+     */
+    private $endDate;
+
+
+    /**
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Team")
+     */
+    private $team;
+
+    /**
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Player")
+     */
+    private $player;    
+    
+    /**
+     * Set startDate
+     *
+     * @param \DateTime $startDate
+     * @return TeamPlayer
+     */
+    public function setStartDate($startDate)
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Get startDate
+     *
+     * @return \DateTime 
+     */
+    public function getStartDate()
+    {
+        return $this->startDate;
+    }
+
+    /**
+     * Set endDate
+     *
+     * @param \DateTime $endDate
+     * @return TeamPlayer
+     */
+    public function setEndDate($endDate)
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * Get endDate
+     *
+     * @return \DateTime 
+     */
+    public function getEndDate()
+    {
+        return $this->endDate;
+    }
+}
