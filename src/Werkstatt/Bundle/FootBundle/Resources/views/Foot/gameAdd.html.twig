@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    {{ parent() }} - Ajouter un match
+{% endblock %}
+ 
+{% block body %}
+  
+    <div class="container"> 
+    <h2>Ajouter un match</h2>
+   {% include "WerkstattFootBundle:Foot:gameAddForm.html.twig" %}
+    <p>
+      <a href="{{ path('foot_home')}}" class="btn">
+        <i class="icon-chevron-left"></i>
+        Retour à l'accueil
+      </a>
+    </p>
+     </div>     
+{% endblock %}

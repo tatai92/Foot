@@ -28,7 +28,11 @@ class Team
      */
     private $name;
 
-
+    /**
+     * @ORM\OneToMany(targetEntity="Werkstatt\Bundle\FootBundle\Entity\GameTeam", mappedBy="team")
+     */
+    private $gameTeam;
+    
     /**
      * Get id
      *

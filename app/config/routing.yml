@@ -1,7 +1,12 @@
+homepage:
+    path:     /
+    defaults: { _controller: WerkstattFootBundle:Foot:index}
+
+
 werkstatt_foot:
     resource: "@WerkstattFootBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /foot
 
 
 MopaBootstrapSandbox:

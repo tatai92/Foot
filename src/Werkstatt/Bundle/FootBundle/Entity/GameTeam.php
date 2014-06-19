@@ -24,14 +24,14 @@ class GameTeam
 
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Game")
+     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Game",  inversedBy="gameTeam")
      * @ORM\JoinColumn(nullable=false)
      */
     private $game;
 
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Team")
+     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Team",  inversedBy="gameTeam")
      * @ORM\JoinColumn(nullable=false)
      */
     private $team;
