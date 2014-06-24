@@ -35,7 +35,6 @@ class FootController extends Controller
     public function gameAddAction(Request $request)
     {
         $game=new Game();
-        $game->setDate(new \Datetime());
         $form = $this->createForm(new GameType(), $game);
         
         if ($request->isMethod('POST')){

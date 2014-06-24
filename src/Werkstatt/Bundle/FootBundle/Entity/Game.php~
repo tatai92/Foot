@@ -31,7 +31,7 @@ class Game
     /**
      * @ORM\OneToMany(targetEntity="Werkstatt\Bundle\FootBundle\Entity\GameTeam", mappedBy="game")
      */
-    private $gameTeam;
+    private $gameTeams;
     
     /**
      * Get id
@@ -73,36 +73,38 @@ class Game
         $this->gameTeam = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+  
+
     /**
-     * Add gameTeam
+     * Add gameTeams
      *
-     * @param \Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeam
+     * @param \Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeams
      * @return Game
      */
-    public function addGameTeam(\Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeam)
+    public function addGameTeam(\Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeams)
     {
-        $this->gameTeam[] = $gameTeam;
+        $this->gameTeams[] = $gameTeams;
 
         return $this;
     }
 
     /**
-     * Remove gameTeam
+     * Remove gameTeams
      *
-     * @param \Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeam
+     * @param \Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeams
      */
-    public function removeGameTeam(\Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeam)
+    public function removeGameTeam(\Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeams)
     {
-        $this->gameTeam->removeElement($gameTeam);
+        $this->gameTeams->removeElement($gameTeams);
     }
 
     /**
-     * Get gameTeam
+     * Get gameTeams
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getGameTeam()
+    public function getGameTeams()
     {
-        return $this->gameTeam;
+        return $this->gameTeams;
     }
 }

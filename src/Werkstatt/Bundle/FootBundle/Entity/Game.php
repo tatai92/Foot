@@ -29,9 +29,9 @@ class Game
     private $date;
 
     /**
-     * @ORM\OneToMany(targetEntity="Werkstatt\Bundle\FootBundle\Entity\GameTeam", mappedBy="game")
+     * @ORM\OneToMany(targetEntity="Werkstatt\Bundle\FootBundle\Entity\GameTeam", mappedBy="game",cascade={"persist"})
      */
-    private $gameTeam;
+    private $gameTeams;
     
     /**
      * Get id
@@ -70,8 +70,13 @@ class Game
      */
     public function __construct()
     {
-        $this->gameTeam = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->date     = new \Datetime;
+        $this->gameTeams = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->addGameTeam(new GameTeam);
+        $this->addGameTeam(new GameTeam);
     }
+
+  
 
     /**
      * Add gameTeam
@@ -81,8 +86,8 @@ class Game
      */
     public function addGameTeam(\Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeam)
     {
-        $this->gameTeam[] = $gameTeam;
-
+        $this->gameTeams[] = $gameTeam;
+        $gameTeam->setGame($this); // On ajoute ceci
         return $this;
     }
 
@@ -93,16 +98,16 @@ class Game
      */
     public function removeGameTeam(\Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeam)
     {
-        $this->gameTeam->removeElement($gameTeam);
+        $this->gameTeams->removeElement($gameTeam);
     }
 
     /**
-     * Get gameTeam
+     * Get gameTeams
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getGameTeam()
+    public function getGameTeams()
     {
-        return $this->gameTeam;
+        return $this->gameTeams;
     }
 }

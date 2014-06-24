@@ -13,6 +13,14 @@ use Doctrine\ORM\Mapping as ORM;
 class GameTeam
 {
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
     /**
      * @var integer
@@ -23,20 +31,28 @@ class GameTeam
 
 
     /**
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Game",  inversedBy="gameTeam")
+     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Game",  inversedBy="gameTeams")
      * @ORM\JoinColumn(nullable=false)
      */
     private $game;
 
     /**
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Team",  inversedBy="gameTeam")
+     * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Team",  inversedBy="gameTeams")
      * @ORM\JoinColumn(nullable=false)
      */
     private $team;
     
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->date = new \Datetime;
+        $this->nbGoals = 0;
+   
+         
+    }
+    
     /**
      * Set nbGoals
      *
@@ -92,7 +108,7 @@ class GameTeam
     public function setTeam(\Werkstatt\Bundle\FootBundle\Entity\Team $team)
     {
         $this->team = $team;
-
+        $team->addGameTeam($this);
         return $this;
     }
 
@@ -104,5 +120,15 @@ class GameTeam
     public function getTeam()
     {
         return $this->team;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

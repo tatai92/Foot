@@ -16,15 +16,12 @@ class GameType extends AbstractType
     {
         $builder
             ->add('date','date')
-            ->add('gameTeam','collection', array(
-                'type' => new GameTeamType,
-                'prototype' => true,
-                'allow_add' => true)
-            )
-                
-        ;
+            ->add(  'gameTeams', 'collection', array(
+                    'type'   => new GameTeamType));
+
     }
-    
+
+
     /**
      * @param OptionsResolverInterface $resolver
      */

@@ -65,44 +65,4 @@ class Team
     {
         return $this->name;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->gameTeams = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->name="";
-    }
-
-    /**
-     * Add gameTeams
-     *
-     * @param \Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeams
-     * @return Team
-     */
-    public function addGameTeam(\Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeam)
-    {
-        $this->gameTeams[] = $gameTeam;
-        return $this;
-    }
-
-    /**
-     * Remove gameTeams
-     *
-     * @param \Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeams
-     */
-    public function removeGameTeam(\Werkstatt\Bundle\FootBundle\Entity\GameTeam $gameTeam)
-    {
-        $this->gameTeams->removeElement($gameTeam);
-    }
-
-    /**
-     * Get gameTeams
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getGameTeams()
-    {
-        return $this->gameTeams;
-    }
 }

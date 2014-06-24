@@ -5,6 +5,19 @@
             {{ form_row(form.date) }}
         </div>
         <div>
+            {{ form_label(form.gameTeams) }}
+            {{ form_errors(form.gameTeams) }}
+            <ul>
+                {% for gameteamField in form.gameTeams %}
+                    <li>
+                        {{ form_errors(gameteamField) }}
+                        {{ form_widget(gameteamField) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div>
             <button type="submit">Ajouter</button>
         </div>
         {{ form_rest(form) }}
