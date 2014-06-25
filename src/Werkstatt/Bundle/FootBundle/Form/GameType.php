@@ -15,7 +15,12 @@ class GameType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date','date')
+    
+            ->add('date','date',array(
+                'widget' =>'single_text',
+                'format' =>'dd/MM/yyyy',
+                'attr' => array('class' => 'date')
+                 ))
             ->add(  'gameTeams', 'collection', array(
                     'type'   => new GameTeamType));
 

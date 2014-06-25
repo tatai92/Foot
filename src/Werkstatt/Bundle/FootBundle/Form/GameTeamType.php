@@ -15,13 +15,15 @@ class GameTeamType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nbGoals','integer')
+         
             ->add('team', 'entity', array(
                   'class'    => 'WerkstattFootBundle:Team',
                   'property' => 'name',
                   'multiple' => false)
                  )
-
+            ->add('nbGoals', 'choice', array(
+    'choices'   => range(0,20),
+    'empty_value' => false))
         ;
     }
     

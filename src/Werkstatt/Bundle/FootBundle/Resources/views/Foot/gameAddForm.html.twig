@@ -1,20 +1,16 @@
 <form action="{{ path('add_game') }}" method="post" {{ form_enctype(form) }}>
     <h3>Formulaire </h3>
-    <div class="well">
+    <div>
         <div>    
             {{ form_row(form.date) }}
         </div>
-        <div>
-            {{ form_label(form.gameTeams) }}
-            {{ form_errors(form.gameTeams) }}
-            <ul>
-                {% for gameteamField in form.gameTeams %}
-                    <li>
-                        {{ form_errors(gameteamField) }}
-                        {{ form_widget(gameteamField) }}
-                    </li>
-                {% endfor %}
-            </ul>
+        <div class="row">
+            <div class="col-md-6">{{ form_widget(form.gameTeams[0].team) }}</div>
+            <div class="col-md-6">{{ form_widget(form.gameTeams[1].team) }}</div>
+        </div>   
+        <div  class="row">   
+            <div class="col-md-6">{{ form_widget(form.gameTeams[0].nbGoals) }}</div>
+            <div class="col-md-6">{{ form_widget(form.gameTeams[1].nbGoals) }}</div>
         </div>
         
         <div>

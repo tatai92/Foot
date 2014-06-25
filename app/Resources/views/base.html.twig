@@ -9,6 +9,7 @@
         {% block stylesheets %}
         {% stylesheets
             '%kernel.root_dir%/../vendor/twbs/bootstrap/less/bootstrap.less'
+            'http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css'
             filter='lessphp,cssrewrite'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" />
@@ -31,6 +32,7 @@
         {% block javascripts %}
         {% javascripts
             'http://code.jquery.com/jquery-1.11.1.js'
+            'http://code.jquery.com/ui/1.10.4/jquery-ui.js'
             '../vendor/twbs/bootstrap/js/dropdown.js'
         %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
