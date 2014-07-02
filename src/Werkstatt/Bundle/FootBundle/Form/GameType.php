@@ -19,10 +19,11 @@ class GameType extends AbstractType
             ->add('date','date',array(
                 'widget' =>'single_text',
                 'format' =>'dd/MM/yyyy',
-                'attr' => array('class' => 'date')
+                'attr' => array('class' => 'date'),
+                'label' =>"Date du match"
                  ))
             ->add(  'gameTeams', 'collection', array(
-                    'type'   => new GameTeamType));
+                    'type'   => new GameTeamType,'error_bubbling' => false));
 
     }
 

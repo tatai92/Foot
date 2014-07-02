@@ -18,5 +18,16 @@
 {% endblock %}
     
 {% block document_ready %}
-    $('form input.date').datepicker();
+    $('form input.date').datepicker({ dateFormat: 'dd/mm/yy' , firstDay: 1} );
+    //$('form input.date').datepicker( $.datepicker.regional[ "fr" ] );
+    // impossibilité de sélectionner 2 équipes identiques
+    $('[id$="_team"]').change(function() {
+        var selectedTeamId=$(this).val();
+        var currentInputId= this.id;
+        var currentIndice=currentInputId.substring((currentInputId.length)-6,(currentInputId.length)-5);
+        var oppositeIndice=Math.abs(currentIndice-1);
+        var oppositeInputId=$('[id$="_team"]')[oppositeIndice].id;
+        $("#"+oppositeInputId+" option").removeAttr('disabled');
+        $("#"+oppositeInputId+" option[value=" + selectedTeamId + "]").attr('disabled','disabled');
+    });
 {% endblock %}

@@ -3,6 +3,8 @@
 namespace Werkstatt\Bundle\FootBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
  * Game
@@ -25,11 +27,13 @@ class Game
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
+     * @Assert\Type(type="datetime", message="La valeur {{ value }} n'est pas un type {{ type }} valide.")
      */
     private $date;
 
     /**
      * @ORM\OneToMany(targetEntity="Werkstatt\Bundle\FootBundle\Entity\GameTeam", mappedBy="game",cascade={"persist"})
+     * @Assert\Valid()
      */
     private $gameTeams;
     
@@ -109,5 +113,17 @@ class Game
     public function getGameTeams()
     {
         return $this->gameTeams;
+    }
+    
+    
+     /**
+     @Assert\Callback()
+     *
+     */
+    public function gameTeamsValid(ExecutionContextInterface $context)
+    {
+        if($this->gameTeams[0]->getTeam()->getId() == $this->gameTeams[1]->getTeam()->getId()){ 
+            $context->addViolationAt('gameTeams', 'Vous ne pouvez pas sélectionner 2 équipes identiques.'.$this->gameTeams[0]->getTeam()->getId(), array(), null);
+        }
     }
 }

@@ -19,11 +19,16 @@ class GameTeamType extends AbstractType
             ->add('team', 'entity', array(
                   'class'    => 'WerkstattFootBundle:Team',
                   'property' => 'name',
-                  'multiple' => false)
-                 )
+                  'multiple' => false,
+                  'empty_value' => 'Choisissez une équpe',
+                  'empty_data'  => null,
+                  'required'=>false,
+                )
+            )
             ->add('nbGoals', 'choice', array(
-    'choices'   => range(0,20),
-    'empty_value' => false))
+                'choices'   => range(0,20),
+                'empty_value' => false)
+            )
         ;
     }
     

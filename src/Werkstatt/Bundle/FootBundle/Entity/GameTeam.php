@@ -3,6 +3,7 @@
 namespace Werkstatt\Bundle\FootBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * GameTeam
@@ -26,6 +27,7 @@ class GameTeam
      * @var integer
      *
      * @ORM\Column(name="nb_goals", type="smallint")
+     * @Assert\Type(type="integer", message="La valeur {{ value }} n'est pas un type {{ type }} valide.")
      */
     private $nbGoals;
 
@@ -39,6 +41,7 @@ class GameTeam
     /**
      * @ORM\ManyToOne(targetEntity="Werkstatt\Bundle\FootBundle\Entity\Team",  inversedBy="gameTeams")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull()
      */
     private $team;
     
