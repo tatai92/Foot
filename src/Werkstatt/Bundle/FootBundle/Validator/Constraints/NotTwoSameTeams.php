@@ -9,5 +9,5 @@ use Symfony\Component\Validator\Constraint;
  */
 class NotTwoSameTeams extends Constraint
 {
-    public $message = 'Vous ne pouvez pas sélectionner 2 fois la même équipe.';
+    public $message = 'Vous ne pouvez pas sélectionner 2 fois la même équipe. ';
 }
