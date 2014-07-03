@@ -122,8 +122,12 @@ class Game
      */
     public function gameTeamsValid(ExecutionContextInterface $context)
     {
+        if ($this->gameTeams[0]->getTeam()==NULL or  $this->gameTeams[1]->getTeam()==NULL)
+        {
+            return;
+        }
         if($this->gameTeams[0]->getTeam()->getId() == $this->gameTeams[1]->getTeam()->getId()){ 
-            $context->addViolationAt('gameTeams', 'Vous ne pouvez pas sélectionner 2 équipes identiques.'.$this->gameTeams[0]->getTeam()->getId(), array(), null);
+            $context->addViolationAt('gameTeams', 'Vous ne pouvez pas sélectionner 2 équipes identiques.', array(), null);
         }
     }
 }
